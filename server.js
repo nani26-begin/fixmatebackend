@@ -16,6 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
+app.get('/', (req, res) => {
+    res.send('FixMate API is running perfectly!');
+});
 app.use('/api/auth', authRoutes);
 app.use('/api/workers', workerRoutes);
 
